@@ -9,8 +9,8 @@ server.use(restify.plugins.bodyParser());
 
 // Create adapter
 const adapter = new BotFrameworkAdapter({
-    appId: process.env.MicrosoftAppId || '',
-    appPassword: process.env.MicrosoftAppPassword || ''
+    appId: process.env.MicrosoftAppId,
+    appPassword: process.env.MicrosoftAppPassword
 });
 
 // Catch-all for errors

@@ -19,15 +19,6 @@ class FPLBot extends ActivityHandler {
             await next();
         });
 
-        this.onMembersAdded(async (context, next) => {
-            const welcomeText = 'Welcome to the FPL Bot! Type "show-league" to see your league standings! ⚽';
-            for (let cnt = 0; cnt < context.activity.membersAdded.length; cnt++) {
-                if (context.activity.membersAdded[cnt].id !== context.activity.recipient.id) {
-                    await context.sendActivity(MessageFactory.text(welcomeText));
-                }
-            }
-            await next();
-        });
     }
 
     async sendLeagueStandings(context) {
